@@ -3,11 +3,6 @@ class VirtualPage {
    private boolean modify;
    private boolean isPresent;
    private int pageFrameNumber;
-   private SharedValue counter;
-
-   public VirtualPage() {
-      this.counter = new SharedValue();
-   }
 
    public boolean isReference() {
       return reference;
@@ -33,16 +28,11 @@ class VirtualPage {
       this.isPresent = isPresent;
    }
 
-   public int getPageFrameNumber() {
+   public int pageFrameNumber() {
       return pageFrameNumber;
    }
 
    public void setPageFrameNumber(int pageFrameNumber) {
       this.pageFrameNumber = pageFrameNumber;
    }
-
-   public void setCounter() {
-      this.counter.setValue(this.counter.getValue() + 1);
-   }
-
 }
