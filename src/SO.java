@@ -1,8 +1,16 @@
 class SO {
-   public static final int SIZE = 16;
+   public static final int SIZE = 16; // Tamanho da Mémoria Virtual
+   public static final int quantityProcess = 2; // Quantidade de Processos
 
    public static void main(String[] args) {
-      VirtualMemory vm = new VirtualMemory(SIZE);
+      MemoryManagementUnit mmu = new MemoryManagementUnit(SIZE);
+
+      int processMemory = SIZE / quantityOfprocess;
+
+      for (int i = 0; i < quantityOfprocess; i++) {
+         new Process(i, (i * (processMemory)), mmu).start();
+         mmu.HD.setHD(processMemory);
+      }
 
    }
 }
