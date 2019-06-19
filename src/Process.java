@@ -14,9 +14,9 @@ class Process extends Thread {
    public void executeOperations() {
       for (String operation : this.operations) {
          if (Objects.equals(operation.substring(2), "R")) {
-            mmu.read();
+            mmu.read((firstAddressMemory + Integer.parseInt(operation.substring(1))));
          } else {
-            mmu.write();
+            mmu.write((firstAddressMemory + Integer.parseInt(operation.substring(1))));
          }
       }
    }
