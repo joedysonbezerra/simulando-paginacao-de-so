@@ -8,7 +8,6 @@ class PhysicalMemory {
       for (int i = 0; i < size; i++) {
          physicalMemory.add(null);
       }
-
    }
 
    public ArrayList isFull() {
@@ -34,7 +33,7 @@ class PhysicalMemory {
       System.out.println(">>>>> Memória Ram <<<<<<");
       System.out.print("[ ");
       physicalMemory.forEach(value -> System.out.print(value + " "));
-      System.out.print("]");
+      System.out.println("]");
    }
 
 }
