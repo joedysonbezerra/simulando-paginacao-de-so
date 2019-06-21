@@ -5,10 +5,10 @@ class SO {
    public static void main(String[] args) {
       MemoryManagementUnit mmu = new MemoryManagementUnit(SIZE);
 
-      int processMemory = SIZE / quantityOfprocess;
+      int processMemory = SIZE / quantityProcess;
 
-      for (int i = 0; i < quantityOfprocess; i++) {
-         new Process(i, (i * (processMemory)), mmu).start();
+      for (int i = 0; i < quantityProcess; i++) {
+         new Process(i, (i * processMemory), mmu).start();
          mmu.HD.setHD(processMemory);
       }
 
