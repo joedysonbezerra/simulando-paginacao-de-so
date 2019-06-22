@@ -11,17 +11,12 @@ class LeastRecentlyUsed {
    public int swap() {
       page = this.lru.lastElement();
       this.lru.remove(this.lru.size() - 1);
+      page.setCounter();
       return page.getPageFrameNumber();
    }
 
    public void setLru(VirtualPage page) {
-      // existe
-      if (page == lru) {
-         page.setCounter();
-      } else {
-         this.lru.add(page);
-      }
-
+      this.lru.add(page);
    }
 
 }
