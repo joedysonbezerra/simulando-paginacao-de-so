@@ -15,6 +15,6 @@ class VirtualMemory {
    public void printVirtualMemory() {
       System.out.println(">>>>> Memória Virtual <<<<<<");
       virtualMemory.forEach(page -> System.out.println("[ " + page.isReference() + ", " + page.isModify() + ", "
-            + page.isPresent() + ", " + page.pageFrameNumber() + " ],"));
+            + page.isPresent() + ", " + page.pageFrameNumber() + ", " + page.getCounter() + "],"));
    }
 }
