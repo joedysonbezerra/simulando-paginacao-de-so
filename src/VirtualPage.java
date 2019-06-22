@@ -3,6 +3,7 @@ class VirtualPage {
    private boolean modify;
    private boolean isPresent;
    private int pageFrameNumber;
+   private int counter = 0;
 
    public boolean isReference() {
       return reference;
@@ -34,5 +35,21 @@ class VirtualPage {
 
    public void setPageFrameNumber(int pageFrameNumber) {
       this.pageFrameNumber = pageFrameNumber;
+   }
+
+   public int getPageFrameNumber() {
+      return pageFrameNumber;
+   }
+
+   public int getCounter() {
+      return counter;
+   }
+
+   public void setCounter() {
+      this.counter = 0;
+   }
+
+   public void increaseCounter() {
+      this.counter++;
    }
 }
