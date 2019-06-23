@@ -3,5 +3,5 @@ public interface MMUI {
 
    public void read(int address, int pid);
 
-   public void write(int address, int pid);
+   public void write(int address, int pid, int value);
 }
