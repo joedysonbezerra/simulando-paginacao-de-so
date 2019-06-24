@@ -8,11 +8,15 @@ class LeastRecentlyUsed {
       new Thread(new Time(this.lru)).start();
    }
 
-   public int swap() {
-      page = this.lru.lastElement();
+   public VirtualPage swap() {
+      VirtualPage page = this.lru.lastElement();
       this.lru.remove(this.lru.size() - 1);
       page.setCounter();
-      return page.getPageFrameNumber();
+      page.setPresent(false);
+      page.setReference(false);
+      page.setModify(false);
+      System.out.println("Troca - " + page.getPageFrameNumber());
+      return page;
    }
 
    public void setLru(VirtualPage page) {
