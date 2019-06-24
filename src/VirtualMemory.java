@@ -17,4 +17,8 @@ class VirtualMemory {
       virtualMemory.forEach(page -> System.out.println("[ " + page.isReference() + ", " + page.isModify() + ", "
             + page.isPresent() + ", " + page.pageFrameNumber() + ", " + page.getCounter() + "],"));
    }
+
+   public VirtualPage getPage(int address) {
+      return virtualMemory.get(address);
+   }
 }

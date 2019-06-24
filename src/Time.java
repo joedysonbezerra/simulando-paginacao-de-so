@@ -13,13 +13,17 @@ class Time implements Runnable {
    @Override
    public void run() {
       while (true) {
-         lru.forEach(page -> page.increaseCounter());
-         Collections.sort(this.lru, Comparator.comparing(page -> page.getCounter()));
+         lru.forEach(page -> {
+            page.increaseCounter();
+            // System.out.print(page.getCounter() + ", ");
+         });
+         System.out.println(" ");
          try {
             Thread.sleep(5000);
          } catch (InterruptedException e) {
             e.printStackTrace();
          }
+         Collections.sort(this.lru, Comparator.comparing(page -> page.getCounter()));
       }
    }
 }
