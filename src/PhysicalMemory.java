@@ -10,17 +10,13 @@ class PhysicalMemory {
       }
    }
 
-   public ArrayList isFull() {
-      ArrayList response = new ArrayList();
-      response.add(true);
-      response.add(-1);
-
+   public int isFull() {
+      int response = -1;
       int address = 0;
 
       for (Integer element : physicalMemory) {
          if (element == null) {
-            response.set(0, false);
-            response.set(1, address);
+            response = address;
             break;
          }
          address++;
@@ -34,6 +30,14 @@ class PhysicalMemory {
       System.out.print("[ ");
       physicalMemory.forEach(value -> System.out.print(value + " "));
       System.out.println("]");
+   }
+
+   public void setPhysicalMemory(int value, int address) {
+      physicalMemory.set(address, value);
+   }
+
+   public Integer getValue(int address) {
+      return physicalMemory.get(address);
    }
 
 }
