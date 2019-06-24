@@ -19,11 +19,16 @@ class Process extends Thread {
 
    public void executeOperations() {
       for (String operation : this.operations) {
-         int address = firstAddressMemory + Integer.parseInt(String.valueOf(operation.charAt(0)));
+         int address = Integer.parseInt(String.valueOf(operation.charAt(0)));
          if (operation.charAt(2) == 'R') {
-            mmu.read(address, pid);
+            mmu.read(this.firstAddressMemory, address, pid);
          } else if (operation.charAt(2) == 'W') {
-            mmu.write(address, pid, Integer.parseInt(operation.substring(4)));
+            mmu.write(this.firstAddressMemory, address, pid, Integer.parseInt(operation.substring(4)));
+         }
+         try {
+            Thread.sleep(3000);
+         } catch (InterruptedException e) {
+            e.printStackTrace();
          }
       }
    }
