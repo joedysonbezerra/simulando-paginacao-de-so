@@ -17,6 +17,10 @@ class HardDisk {
       return this.hd.get(processAddress).get(dataAddress);
    }
 
+   public void setProcessData(int processAddress, int dataAddress, int value) {
+      this.hd.get(processAddress).set(dataAddress, value);
+   }
+
    public void printHardDisk() {
       int i = 0;
       for (ArrayList<Integer> processData : this.hd) {
