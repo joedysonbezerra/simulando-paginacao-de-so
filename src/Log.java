@@ -12,6 +12,7 @@ class Log implements Runnable {
       this.HD = hd;
    }
 
+   // Exibe os dados das mémorias na saída padrão
    @Override
    public void run() {
       while (true) {

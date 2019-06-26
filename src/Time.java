@@ -10,6 +10,7 @@ class Time implements Runnable {
       this.lru = lru;
    }
 
+   // Incrementa o contador de todos que tiverem na mémoria ram e ordena
    @Override
    public void run() {
       while (true) {
@@ -17,7 +18,6 @@ class Time implements Runnable {
             page.increaseCounter();
             // System.out.print(page.getCounter() + ", ");
          });
-         System.out.println(" ");
          try {
             Thread.sleep(5000);
          } catch (InterruptedException e) {

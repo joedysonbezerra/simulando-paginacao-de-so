@@ -8,6 +8,7 @@ class LeastRecentlyUsed {
       new Thread(new Time(this.lru)).start();
    }
 
+   // Escolhe qual página será retirado da mémoria ram
    public VirtualPage swap() {
       VirtualPage page = this.lru.lastElement();
       this.lru.remove(this.lru.size() - 1);
